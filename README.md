@@ -1,5 +1,6 @@
 # Laravel 5.4 Socialite Wrapper
 
+**Original Source:** https://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html
 
 Description goes here:
 
