@@ -9,6 +9,8 @@ use Laravel\Socialite\Contracts\Provider;
 
 class SocialiteWrapperService
 {
+    protected $defaultRole = 'user';
+
     public function createOrGetUser(Provider $provider)
     {
         $providerUser = $provider->user();
@@ -32,10 +34,9 @@ class SocialiteWrapperService
                     'email'    => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
                 ]);
-                // klaravel/ntrust or zizaco/entrust packages
                 // If roles table exists
                 if (Schema::hasTable('roles')) {
-                    $role = \App\Role::whereName('user');
+                    $role = \App\Role::whereName($this->defaultRole);
                     $user->roles()->attach($role->id);
                 }
             }
