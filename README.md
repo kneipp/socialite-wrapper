@@ -51,7 +51,8 @@ TWITTER_SECRET=
 ```
 
 - Run:
- ```
+
+```
 php artisan vendor:publish --provider="Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider"
 php artisan migrate
 ```
