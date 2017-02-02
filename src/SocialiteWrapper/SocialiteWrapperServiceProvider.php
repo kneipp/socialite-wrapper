@@ -27,15 +27,14 @@ class SocialiteWrapperServiceProvider extends ServiceProvider
 
         $this->prepareResources();
 
-        $this->loadRoutesFrom(realpath(__DIR__.'/routes/web.php'));
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 
     protected function prepareResources()
     {
         // Publish migrations
-        $migrations = realpath(__DIR__.'/database/migrations');
         $this->publishes([
-            $migrations => database_path('/migrations'),
+            __DIR__ . '/../database/migrations' => database_path('/migrations'),
         ], 'migrations');
     }
 }
