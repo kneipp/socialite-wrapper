@@ -1,11 +1,10 @@
 # Laravel 5.4 Socialite Wrapper
 
-**Original Source:** https://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html
+Socialize implementation for your Laravel 5.4 project.
 
-Description goes here:
-
-- `awesome subtopic`
-- `shine subtopic`
+Awesome to use with Sentinel (and free social login option), Entrust or default Auth.
+ 
+**Original:** https://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html
 
 ## Usage
 
@@ -26,7 +25,7 @@ Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider::class,
 
 ### Step 3: Almost done
 
-- add keys in config/services.php and .env file:
+- add keys in config/services.php:
 ```php
         'facebook' => [
             'client_id' => env('FACEBOOK_KEY'),
@@ -41,11 +40,23 @@ Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider::class,
         ],
 ```
 
-- Run: php artisan vendor:publish --provider="Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider"
-  
-- Run: php artisan migrate
+- add .env file keys and check APP_URL value:
 
-- Create link in your views:
+```
+FACEBOOK_KEY=
+FACEBOOK_SECRET=
+
+TWITTER_KEY=
+TWITTER_SECRET=
+```
+
+- Run:
+ ```
+php artisan vendor:publish --provider="Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider"
+php artisan migrate
+```
+
+- Create your links in views/auth/login.blade.php for example:
 ```html
 <a href="redirect/facebook">FB Login</a>
 <a href="redirect/twitter">Twitter Login</a>
