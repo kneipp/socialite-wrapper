@@ -38,6 +38,18 @@ Kneipp\SocialiteWrapper\SocialiteWrapperServiceProvider::class,
             'client_secret' => env('TWITTER_SECRET'),
             'redirect' => env('APP_URL') . '/callback/twitter',
         ],
+        
+        'google' => [
+            'client_id' => env('GOOGLE_KEY'),
+            'client_secret' => env('GOOGLE_SECRET'),
+            'redirect' => env('APP_URL') . '/callback/google',
+        ],
+    
+        'linkedin' => [
+            'client_id' => env('LINKEDIN_KEY'),
+            'client_secret' => env('LINKEDIN_SECRET'),
+            'redirect' => env('APP_URL') . '/callback/linkedin/',
+        ],
 ```
 
 - add .env file keys and check APP_URL value:
