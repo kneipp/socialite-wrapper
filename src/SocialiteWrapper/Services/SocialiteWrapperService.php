@@ -33,10 +33,13 @@ class SocialiteWrapperService
                 $user = User::create([
                     'email'    => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    'password' => bcrypt(env('APP_KEY') . time()),
                 ]);
                 // If roles table exists
                 if (Schema::hasTable('roles')) {
-                    $role = \App\Role::whereName($this->defaultRole);
+                    // Requires App\Role class
+                    $role = \App\Role::whereName($this->defaultRole)->first();
+                    // User needs relationship with Roles
                     $user->roles()->attach($role->id);
                 }
             }

@@ -3,8 +3,8 @@
 namespace Kneipp\SocialiteWrapper\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Kneipp\SocialiteWrapper\Services\SocialiteWrapperService;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteWrapperController extends Controller
@@ -24,7 +24,9 @@ class SocialiteWrapperController extends Controller
     public function callback(SocialiteWrapperService $service, $provider)
     {
         $user = $service->createOrGetUser(Socialite::driver($provider));
-        Sentinel::login($user);
+        // use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+        // Sentinel::login($user);
+        Auth::login($user);
 
         return redirect()->to($this->redirectTo);
     }
