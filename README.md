@@ -1,10 +1,8 @@
-# Laravel 5.4 Socialite Wrapper
+# Laravel 5.7 Socialite Wrapper
 
-Socialize implementation for your Laravel 5.4 project.
+Socialize implementation for your Laravel 5.7 project.
 
 Awesome to use with Sentinel (and free social login option), Entrust or default Auth.
- 
-**Original:** https://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html
 
 ## Usage
 
