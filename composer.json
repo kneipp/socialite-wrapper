@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "laravel/socialite": "^3.0"
+        "laravel/socialite": "^4.0"
     },
     "autoload": {
         "psr-4": {
