@@ -1,5 +1,5 @@
 {
-    "name": "kneipp/socialite-wrapper",
+    "name": "nestednet/socialite-wrapper",
     "description": "Laravel socialite wrapper.",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "laravel/socialite": "^3.0"
+        "laravel/socialite": "^4.0"
     },
     "autoload": {
         "psr-4": {
